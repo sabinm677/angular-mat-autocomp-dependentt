@@ -30,7 +30,8 @@ export class AutocompleteSimpleExample {
   }
 
   getPosts(userId){
-    alert(userId);
+    this.usersControl.setValue('');
+    // alert(userId);
     let url = 'https://jsonplaceholder.typicode.com/posts?userId='+userId;
     this.http.get(`${url}`).subscribe(posts => {
         this.posts = [...posts];
